@@ -1,0 +1,14 @@
+package view;
+
+import javax.swing.JPanel;
+
+public class ProgressPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public ProgressPanel() {
+
+	}
+
+}
