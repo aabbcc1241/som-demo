@@ -1,8 +1,7 @@
-package view;
+package demo.som.view;
 
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.BoxLayout;
+import javax.swing.*;
+import java.awt.*;
 
 public class MainPanel extends JPanel {
 

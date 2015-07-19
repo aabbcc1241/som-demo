@@ -9,5 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib-som-demo" level="project" />
+    <orderEntry type="module" module-name="java-myutils" />
   </component>
 </module>

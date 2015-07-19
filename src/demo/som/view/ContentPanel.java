@@ -1,4 +1,4 @@
-package view;
+package demo.som.view;
 
 import javax.swing.JPanel;
 import java.awt.Canvas;
@@ -13,8 +13,7 @@ public class ContentPanel extends JPanel {
 		setLayout(new BorderLayout(0, 0));
 		
 		Canvas canvas = new Canvas();
-		add(canvas);
+		add(canvas, BorderLayout.CENTER);
 
 	}
-
 }
