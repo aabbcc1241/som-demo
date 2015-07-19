@@ -7,9 +7,6 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.factories.FormFactory;
 
-import javax.swing.JLabel;
-import javax.swing.JSlider;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.BoxLayout;
 
@@ -18,9 +15,7 @@ import java.awt.Component;
 import javax.swing.Box;
 
 import java.awt.Dimension;
-import java.awt.print.Paper;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 
 public class ControlPanel extends JPanel {
 	public static final int standard_padding = 25;
