@@ -20,7 +20,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
 public class SliderPanel extends JPanel {
-	public JTextField textField;
+	public NumberJTextField textField;
 	public JSlider slider;
 
 	/**
@@ -46,7 +46,7 @@ public class SliderPanel extends JPanel {
 		});
 		panel.add(slider);
 
-		textField = new JTextField();
+		textField = new NumberJTextField(0,100,false);
 		textField.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusLost(FocusEvent e) {

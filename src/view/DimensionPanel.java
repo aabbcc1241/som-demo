@@ -16,10 +16,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class DimensionPanel extends JPanel {
-	private JTextField textField1;
-	private JTextField textField2;
+	private NumberJTextField textField1;
+	private NumberJTextField textField2;
 
 	private final int MIN, MAX;
 	public AtomicInteger value1 = new AtomicInteger();
@@ -46,64 +48,15 @@ public class DimensionPanel extends JPanel {
 		panel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		textField1 = new JTextField();
-		textField1.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (restoreOnLostFocus)
-					restore(value1, textField1);
-				else
-					check(value1, textField1);
-			}
-		});
-		textField1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				check(value1, textField1);
-			}
-		});
+		textField1 = new NumberJTextField(min, max, restoreOnLostFocus);
 		panel.add(textField1);
 		textField1.setColumns(10);
 
 		JLabel lblX = new JLabel("X");
 		panel.add(lblX);
 
-		textField2 = new JTextField();
-		textField2.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusLost(FocusEvent e) {
-				if (restoreOnLostFocus)
-					restore(value2, textField2);
-				else
-					check(value2, textField2);
-			}
-		});
-		textField2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				check(value2, textField2);
-			}
-		});
+		textField2 = new NumberJTextField(min, max, restoreOnLostFocus);
 		panel.add(textField2);
 		textField2.setColumns(10);
-	}
-
-	void check(AtomicInteger value, JTextField textField) {
-		if (textField.getText().length() > 0)
-			try {
-				int val = Integer.parseInt(textField.getText());
-				if (val >= MIN && val <= MAX) {
-					value.set(val);
-				} else
-					restore(value, textField);
-			} catch (NumberFormatException e) {
-				restore(value, textField);
-			}
-		else {
-			value.set(MIN);
-			restore(value, textField);
-		}
-	}
-
-	void restore(AtomicInteger value, JTextField textField) {
-		textField.setText(String.valueOf(value.get()));
 	}
 }
