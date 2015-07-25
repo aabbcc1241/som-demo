@@ -21,7 +21,7 @@ public class MainPanel extends JPanel {
 		ProgressPanel progressPanel = new ProgressPanel();
 		sidePanel.add(progressPanel);
 		
-		JPanel contentPanel = new JPanel();
+		ContentPanel contentPanel = new ContentPanel();
 		add(contentPanel, BorderLayout.CENTER);
 
 	}

@@ -1,19 +1,19 @@
 package demo.som.view;
 
-import javax.swing.JPanel;
-import java.awt.Canvas;
-import java.awt.BorderLayout;
+import demo.som.controller.SomCanvas;
+
+import javax.swing.*;
+import java.awt.*;
 
 public class ContentPanel extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
-	public ContentPanel() {
-		setLayout(new BorderLayout(0, 0));
-		
-		Canvas canvas = new Canvas();
-		add(canvas, BorderLayout.CENTER);
+    /**
+     * Create the panel.
+     */
+    public ContentPanel() {
+        setLayout(new BorderLayout(0, 0));
 
-	}
+        SomCanvas canvas=new SomCanvas();
+        add(canvas, BorderLayout.CENTER);
+    }
 }
