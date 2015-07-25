@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ContentPanel extends JPanel {
+    public  SomCanvas somCanvas =new SomCanvas();
 
     /**
      * Create the panel.
@@ -13,7 +14,6 @@ public class ContentPanel extends JPanel {
     public ContentPanel() {
         setLayout(new BorderLayout(0, 0));
 
-        SomCanvas canvas=new SomCanvas();
-        add(canvas, BorderLayout.CENTER);
+        add(somCanvas, BorderLayout.CENTER);
     }
 }
